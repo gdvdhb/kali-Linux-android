@@ -45,7 +45,7 @@
 9. إذا أردت واجهة رسومية، قم بتثبيت RVNC واتبع الخطوات المذكورة.
 
 10. لحل مشكلة "[Process completed (signal 9) - press Enter]"، قم بتنفيذ الأوامر التالية:
-    ```sh
+    ```shell
     apt install android-tools
     adb
     adb pair Yor_Ip
@@ -56,20 +56,25 @@
     adb shell settings put global settings_enable_monitor_phantom_procs false
     ```
 
-11. قم بتشغيل Termux واكتب الأمر `nh` ثم `nethunter kex`.
+11. قم بتشغيل Termux واكتب الأمر
+12. ```shell
+    nh```
+13.  ثم
+14.  ```shell
+     ethunter kex```
 
-12. انتقل إلى تطبيق RVNC واتبع الخطوات المذكورة للاتصال بنظام Kali Linux.
+15. انتقل إلى تطبيق RVNC واتبع الخطوات المذكورة للاتصال بنظام Kali Linux.
 
 مبروك! لقد قمت بتثبيت نظام Kali Linux بنجاح على جهازك باستخدام Termux.
-```
 
 هذا يشرح الخطوات بشكل أفضل ويصحح الأخطاء التي تم اكتشافها، بالإضافة إلى تنسيقه كملف `README.md` لرفعه في مستودع المشروع على منصة GitHub أو ما شابه.
 ونفذ هذه الاوامر بالترتيب
-
-nethunter kex &
+```shell
+nethunter kex &```
 وأفتح التطبيق 
-واضغط ال (+) الموجود اسفل الشاشه بعدها يضهر لك مربعين الاول تكتب به 
-localhost:5901
+واضغط ال (+) الموجود اسفل الشاشه بعدها يضهر لك مربعين الاول تكتب به
+```shell
+localhost:5901```
 الثاني  تكتب به اي شيء مثلا
 my Test Net hunter
 
