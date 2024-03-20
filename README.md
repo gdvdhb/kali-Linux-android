@@ -1,63 +1,69 @@
-ولاً، تقوم بالاتي بالترتيب الصحيح:
+بالطبع، إليك النص المنسق والمصحح:
 
-- المتطلبات:
-  - 1 كيكا (1GB) رام
-  - 2 كيكا (2GB) تخزين
-  - حمل Termux
-  - عارض RVNC
-  - اتصال بالإنترنت
+```markdown
+# تثبيت نظام Kali Linux على Termux
 
-ثانياً، الأوامر:
+## المتطلبات:
+- 1 كيكا (1GB) رام
+- 2 كيكا (2GB) تخزين
+- تطبيق Termux
+- عارض RVNC
+- اتصال بالإنترنت
+
+## الخطوات:
 
 1. تحديث الحزم:
-  
+   ```sh
    pkg update
    pkg install openssl-tool
+   ```
+
 2. تثبيت حزمة wget:
-  
+   ```sh
    pkg install wget
-3. تثبيت حزمة كالي لينكس:
-  
-wget -O install-nethunter-termux https://offs.ec/2MceZWr
-بعدها 
-chmod +x install-nethunter-termux
-بعدها 
-shell
-./install-nethunter-termux
+   ```
 
-4. اختيار نوع والأداء
+3. تثبيت حزمة Kali Linux:
+   ```sh
+   wget -O install-nethunter-termux https://offs.ec/2MceZWr
+   chmod +x install-nethunter-termux
+   shell
+   ./install-nethunter-termux
+   ```
 
-NetHunter ARM64 (full): إصدار كامل يتضمن العديد من الأدوات والميزات. يناسب الأشخاص الذين يحتاجون إلى مجموعة كاملة من الأدوات والخيارات.
+4. اختيار نوع الأداء:
+   - اختر النوع المطلوب: NetHunter ARM64 (full/minimal/nano)
 
-NetHunter ARM64 (minimal): إصدار أقل حجماً يحتوي على عدد مخفض من الأدوات. يمكن أن يكون هذا الخيار مناسبًا لأولئك الذين يرغبون في توفير مساحة التخزين أو يفضلون الحصول على تثبيت أقل.
+5. انتظر حتى يتم تحميل وتثبيت النظام.
 
-NetHunter ARM64 (nano): إصدار صغير جداً يحتوي على عدد قليل جداً من الأدوات. يناسب الأشخاص الذين يحتاجون إلى تثبيت سريع وبسيط ولا يهمهم الحصول على العديد من الأدوات.قم بتحديد النسخة التي
+6. عندما يطلب منك حذف الملفات، اختر "N".
 
-اختر 1 او 2 او 3 حسب اختيارك تنتضر التحميل قد يستغرق وقت طويل
+7. انتظر قليلاً حتى يتم فك الضغط وتحميل ال rootfs.
 
-اذا ضهر خيارات ربما 4 او 5 مرات اختر حرف Y 
+8. اكتب الأمر `nethunter` للدخول إلى نظام Kali Linux.
 
-وأنتضر التحميل
- ملاحضه: وزنه 1كيكابيت مضغوط ويتم فك ضغطه بشكل تلقائي ويكون النهائي 8 كيكابات تقريبا 
+9. إذا أردت واجهة رسومية، قم بتثبيت RVNC واتبع الخطوات المذكورة.
 
-بعدها تنتضر قليلان ليفك الضغط ويحمل ال rootfs
+10. لحل مشكلة "[Process completed (signal 9) - press Enter]"، قم بتنفيذ الأوامر التالية:
+    ```sh
+    apt install android-tools
+    adb
+    adb pair Yor_Ip
+    adb shell "/system/bin/dumpsys activity settings | grep max_phantom_processes"
+    adb shell "/system/bin/dumpsys activity processes -a"
+    adb shell "/system/bin/device_config set_sync_disabled_for_tests persistent"
+    adb shell "/system/bin/device_config put activity_manager max_phantom_processes 2147483647"
+    adb shell settings put global settings_enable_monitor_phantom_procs false
+    ```
 
-5. يقول لك هل تريد حذف الملف اكتب N
-سوف تضهر لك كلمت KILI بخط اخضر كبير هذا يعني انه اشتغل الان اصبح لديك نضام كالي لينكس مبسط بواجهة ترمنال وكل الاوامر سوف تتنفذ في كالي لينكس ارسل مثلا
+11. قم بتشغيل Termux واكتب الأمر `nh` ثم `nethunter kex`.
 
+12. انتقل إلى تطبيق RVNC واتبع الخطوات المذكورة للاتصال بنظام Kali Linux.
 
-uname
-الا ارسل هذه لكي يعمل كل شيء في نضام كالي
+مبروك! لقد قمت بتثبيت نظام Kali Linux بنجاح على جهازك باستخدام Termux.
+```
 
-nethunter
-يضهر لك انك في نضام كالي
-
-
-6. الان اذا اردت ان تضهر واجه رسوميه بدل اوامر حمل
-RVNC
-
-بعدها اذهب ل termux
-
+هذا يشرح الخطوات بشكل أفضل ويصحح الأخطاء التي تم اكتشافها، بالإضافة إلى تنسيقه كملف `README.md` لرفعه في مستودع المشروع على منصة GitHub أو ما شابه.
 ونفذ هذه الاوامر بالترتيب
 
 nethunter kex &
