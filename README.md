@@ -6,7 +6,7 @@
 ## المتطلبات:
 - 1 كيكا (1GB) رام
 - 2 كيكا (2GB) تخزين
-- تطبيق Termux
+- تطبيق [Termux](https://f-droid.org/ar/packages/com.termux/) 
 - عارض RVNC
 - اتصال بالإنترنت
 ```
