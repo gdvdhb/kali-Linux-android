@@ -13,7 +13,7 @@
 ## الخطوات:
 
 1. تحديث الحزم:
-   ```sh
+   ```shell
    pkg update
    pkg install openssl-tool
    ```
