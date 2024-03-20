@@ -24,7 +24,7 @@
    ```
 
 3. تثبيت حزمة Kali Linux:
-   ```sh
+   ```shell
    wget -O install-nethunter-termux https://offs.ec/2MceZWr
    chmod +x install-nethunter-termux
    shell
